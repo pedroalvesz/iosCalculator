@@ -11,6 +11,20 @@ justify-content: flex-end;
 padding: 0 24px 50px;
 `;
 
+export const DisplayKeptNumber = styled.View`
+height: 75px;
+width: 100%;
+margin-bottom: 15px;
+flex-direction: row;
+justify-content: flex-end;
+align-items: flex-end;
+`;
+
+export const KeptNumber = styled.Text`
+color: gray;
+font-size: 35px;
+`;
+
 export const Display = styled.View`
 height: 75px;
 width: 100%;

@@ -5,15 +5,16 @@ import {
   ButtonText,
 } from './style'
 
-interface ButtonColor extends TouchableOpacityProps {
+interface ButtonColor {
   buttoncolor: 'gray' | 'dark-gray' | 'yellow'
   value: number | string;
+  onPress?: () => void;
 }
 
 
-export function Button({buttoncolor, value} : ButtonColor) {
+export function Button({buttoncolor, value, onPress} : ButtonColor) {
   return (
-    <TouchableOpacityButton buttoncolor={buttoncolor}>
+    <TouchableOpacityButton onPress={onPress} buttoncolor={buttoncolor}>
       <ButtonText>{value}</ButtonText>
     </TouchableOpacityButton>
   )
