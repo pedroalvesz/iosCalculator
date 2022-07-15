@@ -1,12 +1,13 @@
 import React from "react";
+import { TouchableOpacityProps } from "react-native";
 import {
   TouchableOpacityButton,
   ButtonText,
 } from './style'
 
-interface ButtonColor {
+interface ButtonColor extends TouchableOpacityProps {
   buttoncolor: 'gray' | 'dark-gray' | 'yellow'
-  value: string;
+  value: number | string;
 }
 
 

@@ -1,5 +1,4 @@
-import React from "react";
-import { StyleSheet } from "react-native";
+import React, { useState } from "react";
 import {
   Container,
   Display,
@@ -17,13 +16,17 @@ import { BiggerButton } from "../../Components/BiggerButton";
 
 export function Home() {
 
-const calculatedValue = 123123
-//ToLocalestring formata o texto / numero recebido pra uma formatação predefinida, se for undefined () ele retorna o que achar melhor.
+const [number, setNumber] = useState(0)
+
+
+function handleAddNumber (value: number) {
+  setNumber(value);
+}
   return(
     <>
     <Container>
       <Display>
-        <DisplayText>{calculatedValue.toLocaleString()}</DisplayText>
+        <DisplayText>{number}</DisplayText>
       </Display>
       <FirstLine>
         <Button value="AC" buttoncolor= 'gray'/>
@@ -32,9 +35,9 @@ const calculatedValue = 123123
         <Button value="/" buttoncolor= 'yellow'/>
       </FirstLine>
       <SecondLine>
-        <Button value="7" buttoncolor= 'dark-gray'/>
-        <Button value="8" buttoncolor= 'dark-gray'/>
-        <Button value="9" buttoncolor= 'dark-gray'/>
+        <Button onPress={() => handleAddNumber(7)} value={7} buttoncolor= 'dark-gray'/>
+        <Button onPress={() => handleAddNumber(8)} value={8} buttoncolor= 'dark-gray'/>
+        <Button onPress={() => handleAddNumber(9)} value={9} buttoncolor= 'dark-gray'/>
         <Button value="x" buttoncolor= 'yellow'/>
       </SecondLine>
       <ThirdLine>
