@@ -33,7 +33,7 @@ function handleAddNumber (value: string) {
 function handleSetOperation (operationtype : string) {
   setOperation(operationtype);
   setSecondNumber(number);
-  setNumber('');
+  setNumber('0');
 }
 
 function handleClearNumber () {
@@ -49,19 +49,34 @@ function handlePorcentage () {
 }
 
 function handleResult () {
-  if(operation === 'x') {
-    let resultX = Number(number) * Number(secondNumber)
+  if(operation === '.') {
+    let resultX = Number(secondNumber) * Number(number)
     setNumber(resultX.toString())
     setOperation(null)
     setSecondNumber('')
-  }else if (operation === '/') {
+  }else if (operation === '÷') {
     let resultDivider = Number(secondNumber) / Number(number)
     setNumber(resultDivider.toString())
     setOperation(null)
     setSecondNumber('')
+  }else if (operation === '+') {
+    let resultPlus = Number(secondNumber) + Number(number)
+    setNumber(resultPlus.toString())
+    setOperation(null)
+    setSecondNumber('')
+  }else if (operation === '-') {
+    let resultMinus = Number(secondNumber) - Number(number)
+    setNumber(resultMinus.toString())
+    setOperation(null)
+    setSecondNumber('')
+  }
+}
+
+function handleInvertValue (value: string) {
+  let valueToBeInverted = Number(value) * -1
+   setNumber(valueToBeInverted.toString())
   }
 
-}
 
 //Lógica result
 //pega primeiro e segundo numb
@@ -73,21 +88,22 @@ function handleResult () {
     <Container>
       <DisplayKeptNumber>
       <KeptNumber>{secondNumber}</KeptNumber>
+      <KeptNumber>{operation}</KeptNumber>
       </DisplayKeptNumber>
       <Display>
         <DisplayText>{number}</DisplayText>
       </Display>
       <FirstLine>
         <Button onPress={handleClearNumber} value="AC" buttoncolor= 'gray'/>
-        <Button value="+/-" buttoncolor= 'gray'/>
+        <Button onPress={() => handleInvertValue(number)}value="+/-" buttoncolor= 'gray'/>
         <Button onPress={handlePorcentage} value="%" buttoncolor= 'gray'/>
-        <Button onPress={() => handleSetOperation('/')} value="/" buttoncolor= 'yellow'/>
+        <Button onPress={() => handleSetOperation('÷')} value="÷" buttoncolor= 'yellow'/>
       </FirstLine>
       <SecondLine>
         <Button onPress={() => handleAddNumber('7')} value={7} buttoncolor= 'dark-gray'/>
         <Button onPress={() => handleAddNumber('8')} value={8} buttoncolor= 'dark-gray'/>
         <Button onPress={() => handleAddNumber('9')} value={9} buttoncolor= 'dark-gray'/>
-        <Button onPress={() => handleSetOperation('x')}value="x" buttoncolor= 'yellow'/>
+        <Button onPress={() => handleSetOperation('.')}value="x" buttoncolor= 'yellow'/>
       </SecondLine>
       <ThirdLine>
         <Button onPress={() => handleAddNumber('4')} value="4" buttoncolor= 'dark-gray'/>
