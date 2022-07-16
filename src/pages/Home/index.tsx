@@ -77,12 +77,6 @@ function handleInvertValue (value: string) {
    setNumber(valueToBeInverted.toString())
   }
 
-
-//Lógica result
-//pega primeiro e segundo numb
-// e faz uma lógica para cada possibilidade de sinal
-//uma pra vezes, uma pra divisão...
-//as principais que vou ter que alterar são as de mais e de menos (provavelmente alterar a ordem do primeiro e segundo number)
   return(
     <>
     <Container>
