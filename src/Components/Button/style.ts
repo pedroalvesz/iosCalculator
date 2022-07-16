@@ -4,6 +4,10 @@ import styled, { css } from 'styled-components';
 interface ButtonColor {
   buttoncolor: 'gray' | 'dark-gray' | 'yellow'
 }
+export const ButtonText = styled.Text<ButtonColor>`
+  color: #FFF;
+  font-size: 30px;
+`;
 
 export const TouchableOpacityButton = styled.TouchableOpacity<ButtonColor>`
   width: 75px;
@@ -20,8 +24,4 @@ export const TouchableOpacityButton = styled.TouchableOpacity<ButtonColor>`
 
   ${({buttoncolor}) => buttoncolor === 'yellow' && css`
     background-color: #FE9E0B`};
-`;
-export const ButtonText = styled.Text`
-  color: #FFF;
-  font-size: 30px;
 `;

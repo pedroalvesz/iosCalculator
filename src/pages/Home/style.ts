@@ -37,7 +37,7 @@ align-items: flex-end;
 `;
 export const DisplayText = styled.Text`
 color: white;
-font-size: 40px;
+font-size: 70px;
 `;
 
 export const FirstLine = styled.View`
