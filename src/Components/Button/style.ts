@@ -4,8 +4,9 @@ import styled, { css } from 'styled-components';
 interface ButtonColor {
   buttoncolor: 'gray' | 'dark-gray' | 'yellow'
 }
+//A propriedade que eu vou usar no if precisa estar no componente que eu to mudando
 export const ButtonText = styled.Text<ButtonColor>`
-  color: #FFF;
+  color: ${({buttoncolor}) => buttoncolor === 'gray' ? '#000' : '#FFF'};
   font-size: 30px;
 `;
 

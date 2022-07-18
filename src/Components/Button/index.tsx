@@ -14,7 +14,7 @@ interface ButtonColor {
 export function Button({buttoncolor, value, onPress} : ButtonColor) {
   return (
     <TouchableOpacityButton onPress={onPress} buttoncolor={buttoncolor}>
-      <ButtonText>{value}</ButtonText>
+      <ButtonText buttoncolor={buttoncolor}>{value}</ButtonText>
     </TouchableOpacityButton>
   )
 }
