@@ -5,7 +5,7 @@
  ⚡ PROJECT SHOWCASE
 </h2>
   <div width="100%" overflow="hidden" align="center">
-  <img src="iosCalculator.gif" width="20%" />
+  <img src="iosCalculator.gif" width="55%" />
   </div>
   <p align="center" width="30%">
  ⚠️ iOS Platform used only for illustration,
